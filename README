@@ -1,0 +1,34 @@
+Based on https://github.com/johmathe/Shotdetect (johmathe@nonutc.fr // http://johmathe.name/shotdetect.html)
+
+Dependencies:
+sudo apt-get install libavdevice-dev libavformat-dev libgd2-noxpm libgd2-noxpm-dev
+
+Building a command line version for ubuntu:
+
+a) Release version:
+cd Release
+make all
+
+b) Debug version:
+cd Debug
+make all
+
+Usage:
+
+shotdetect -i myvideo.avi -o output_dir -s 60 -w -v -f -l -m -r
+
+s <threshold> : set threshold (default 60)
+The threshold is the level for shot detection. High will not detect a lot, low will detect a lot of false shots. A good choice is about 60.
+
+-w : generates audio xml information
+See the generated file for more details
+
+-g <size> : set group of picture (GOP) size (default 12)
+-v : generates video xml informations
+See the generated file for more details
+
+-f : generates the first image of shots
+-l : generates the last image of shots
+-m : generates the thumbnails images
+-r : generates the real size images
+
