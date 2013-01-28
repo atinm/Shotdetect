@@ -198,7 +198,8 @@ void film::update_metadata ()
   if (videoStream != -1) {
     this->height = int (pFormatCtx->streams[videoStream]->codec->height);
     this->width = int (pFormatCtx->streams[videoStream]->codec->width);
-    this->fps = av_q2d (pFormatCtx->streams[videoStream]->r_frame_rate);
+    //this->fps = av_q2d (pFormatCtx->streams[videoStream]->r_frame_rate);
+    this->fps = av_q2d (pFormatCtx->streams[videoStream]->avg_frame_rate);
     avcodec_string (buf, sizeof (buf), pFormatCtx->streams[videoStream]->codec, 0);
     this->codec.video = buf;
 
