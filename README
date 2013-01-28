@@ -14,21 +14,16 @@ cd Debug
 make all
 
 Usage:
-
 shotdetect -i myvideo.avi -o output_dir -s 60 -w -v -f -l -m -r
 
-s <threshold> : set threshold (default 60)
-The threshold is the level for shot detection. High will not detect a lot, low will detect a lot of false shots. A good choice is about 60.
-
--w : generates audio xml information
-See the generated file for more details
-
--g <size> : set group of picture (GOP) size (default 12)
--v : generates video xml informations
-See the generated file for more details
-
--f : generates the first image of shots
--l : generates the last image of shots
--m : generates the thumbnails images
--r : generates the real size images
-
+-h           : show this help
+-i file      : input file path
+-o path      : output path
+-s threshold : threshold
+-g number    : set group of picture (GOP) size
+-w           : generate xml of waveform
+-v           : generate xml of video infos
+-f           : generate first img for each shot
+-l           : generate last img for each shot
+-m           : generate the thumb img
+-r           : generate the real img
